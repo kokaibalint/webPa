@@ -1,14 +1,13 @@
-DROP TABLE IF EXISTS restaurant_foods;
-DROP TABLE IF EXISTS restaurant_tables;
-DROP TABLE IF EXISTS foods;
-DROP TABLE IF EXISTS tables;
-DROP TABLE IF EXISTS restaurants;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS restaurants CASCADE;
+DROP TABLE IF EXISTS foods CASCADE;
+DROP TABLE IF EXISTS orders CASCADE;
+DROP TABLE IF EXISTS restaurant_foods CASCADE;
 
 CREATE TABLE users (
     user_id SERIAL UNIQUE PRIMARY KEY,
-    user_name varchar(16) NOT NULL,
-	user_email varchar(254) NOT NULL,
+    user_name varchar(16)NOT NULL,
+	user_email varchar(254) unique NOT NULL,
 	user_password text NOT NULL,
 	user_role varchar(12) NOT NULL,
 	user_balance integer NOT NULL
