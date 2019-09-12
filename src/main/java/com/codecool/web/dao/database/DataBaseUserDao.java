@@ -123,7 +123,6 @@ public final class DataBaseUserDao extends AbstractDao implements UserDao {
         Role role = Role.valueOf(resultSet.getString("user_role"));
         int balance = resultSet.getInt("user_balance".toUpperCase());
         return new User(id, username, email, password, role, balance);
-
     }
 
 }

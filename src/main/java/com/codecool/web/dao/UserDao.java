@@ -8,12 +8,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface UserDao {
-    User findUserByEmail(String email) throws SQLException;
-    User addUser(String name, String email, String password, Role role, int balance) throws SQLException;
     void updateUserBalance(User user, int credit) throws SQLException;
-    List<User> findAll() throws SQLException;
+    User findUserByEmail(String email) throws SQLException;
     User findById(int id) throws SQLException;
+    User addUser(String name, String email, String password, Role role, int balance) throws SQLException;
     boolean findIfUserExists(String email) throws SQLException;
+    List<User> findAll() throws SQLException;
 
 
 
